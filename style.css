@@ -88,6 +88,11 @@ main {
     width: 250px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.car:hover {
+    transform: translateY(-5px); /* Move the card up when hovered */
 }
 
 .car img {
@@ -105,6 +110,7 @@ main {
     border: none;
     padding: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart:hover {
@@ -146,6 +152,7 @@ main {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .buy-now-btn:hover {
@@ -301,24 +308,22 @@ footer {
     text-decoration: underline;
 }
 
-/* Manager login specific styles */
 #managerLoginForm .input-box {
     margin-bottom: 20px;
 }
 
 #managerLoginForm .input-box input {
-    padding: 10px 15px 10px 40px; /* Adjust padding for icon */
+    padding: 10px 15px 10px 40px; 
 }
 
 #managerLoginForm .input-box label {
-    left: 40px; /* Adjust position for icon */
+    left: 40px; 
 }
 
 #managerLoginForm .input-box .icon {
     left: 25px;
 }
 
-/* Responsive styling */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -332,4 +337,44 @@ footer {
     .modal-content {
         width: 90%;
     }
+}
+
+.car-detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.car-detail {
+    max-width: 600px;
+    text-align: center;
+}
+
+.car-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.car-detail h2 {
+    margin: 20px 0 10px;
+}
+
+.car-detail p {
+    margin: 10px 0;
+}
+
+.buy-now {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:30%;
+    height:13%;
+}
+
+.buy-now:hover {
+    background-color: #555;
 }
