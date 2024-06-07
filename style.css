@@ -1,27 +1,32 @@
-/* styles.css */
-
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 30px 0;
     text-align: center;
 }
 
+header h1 {
+    margin: 5;
+}
+
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    position: relative; /* Add position relative */
-    padding: 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -29,40 +34,135 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li ul.dropdown {
+nav ul li .dropdown {
+    position: relative;
+}
+
+nav ul li .dropdown .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Position below the parent link */
-    left: 0;
-    background-color: #333;
-    padding: 10px;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-nav ul li:hover ul.dropdown {
-    display: block;
-}
-
-nav ul li ul.dropdown li {
-    display: block;
-    margin: 20px 0;
-}
-
-nav ul li ul.dropdown li a {
-    color: #fff;
+nav ul li .dropdown .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
     text-decoration: none;
+    display: block;
+}
+
+nav ul li .dropdown .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+nav ul li .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropbtn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 main {
     padding: 20px;
 }
 
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.car {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.car img {
+    width: 100%;
+    height: auto;
+}
+
+.car h3, .car p {
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #555;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: auto;
+}
+
+.cart-item h3, .cart-item p {
+    margin: 0;
+}
+
+.buy-now-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.buy-now-btn:hover {
+    background-color: #555;
+}
+
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
     text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
@@ -77,64 +177,159 @@ footer {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
-.close {
-    color: #aaa;
+.icon-close {
     float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    font-size: 20px;
     cursor: pointer;
 }
 
-input[type="text"],
-input[type="password"],
-button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
+.icon-close:hover {
+    color: #555;
 }
 
-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-.car-collection {
-    margin-top: 50px;
-}
-
-.car-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.car {
-    width: 300px;
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
+/* Login and registration form styles */
+.form-box {
     text-align: center;
 }
 
-.car img {
-    max-width: 100%;
-    height: auto;
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input,
+.input-box select {
+    width: calc(100% - 40px); /* Adjust width for icon and padding */
+    padding: 10px 15px 10px 40px; /* Adjust padding for icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the total width */
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 40px; /* Adjust position for icon */
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label,
+.input-box select:focus + label,
+.input-box select:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    margin-left:12px;
+}
+
+.remember-forgot input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #333;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.register {
+    margin-top: 20px;
+}
+
+.register a {
+    color: #333;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* Manager login specific styles */
+#managerLoginForm .input-box {
+    margin-bottom: 20px;
+}
+
+#managerLoginForm .input-box input {
+    padding: 10px 15px 10px 40px; /* Adjust padding for icon */
+}
+
+#managerLoginForm .input-box label {
+    left: 40px; /* Adjust position for icon */
+}
+
+#managerLoginForm .input-box .icon {
+    left: 25px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
 }
