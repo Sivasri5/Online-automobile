@@ -20,6 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         loadHomeContent();
     });
+    // Get the selected location span
+// Get all location links in the "Locations" dropdown
+// Get the selected location span
+var selectLocation = document.getElementById("selectLocation");
+
+// Get all location links in the "Locations" dropdown
+var locationLinks = document.querySelectorAll(".nav-link .dropdown-content a");
+
+// Add event listeners to each location link in the "Locations" dropdown
+locationLinks.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        // Update the text content of the selected location span
+        selectLocation.textContent = link.textContent;
+    });
+});
+
+
 
     // Function to load home content
     function loadHomeContent() {
@@ -200,4 +218,3 @@ document.querySelector('.login-link').addEventListener('click', function(event) 
     document.getElementById('userLoginModal').style.display = 'block';
 });
 });
-

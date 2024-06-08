@@ -14,23 +14,46 @@
         <h1>Online Automobile Store</h1>
         <nav>
             <ul>
-                <li><a href="#" id="homeLink">Home</a></li>
                 <li class="nav-link">
-                    <a href="#">Locations <i class="fas fa-chevron-down"></i></a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">Brands <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" id="homeLink"><ion-icon name="home-outline"></ion-icon> Home</a>
                 </li>
                 <li class="nav-link">
                     <div class="dropdown">
-                        <button class="dropbtn">Login <i class="fas fa-chevron-down"></i></button>
+                        <button class="dropbtn"><ion-icon name="location-outline"></ion-icon> Locations <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#" id="Erode">Erode</a>
+                            <a href="#" id="Hyderabad">Hyderabad</a>
+                            <a href="#" id="Chennai">Chennai</a>
+                            <a href="#" id="Trichy">Trichy</a>
+                            <a href="#" id="Salem">Salem</a>
+                            </div>
+                            </div>
+                        <span id="selectLocation"></span>
+                </li>
+                <li class="nav-link">
+                    <div class="dropdown">
+                        <button class="dropbtn"><ion-icon name="location-outline"></ion-icon> New cars in your Location <i class="fas fa-chevron-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#" id="Explore new cars">Explore new cars</a>
+                            <a href="#" id="Electric cars">Electric cars</a>
+                            <a href="#" id="Upcoming cars">Upcoming cars</a>
+                        
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-link">
+                    <a href="#"><ion-icon name="car-outline"></ion-icon> Brands <i class="fas fa-chevron-down"></i></a>
+                </li>
+                <li class="nav-link">
+                    <div class="dropdown">
+                        <button class="dropbtn"><ion-icon name="person-outline"></ion-icon> Login <i class="fas fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                             <a href="#" id="userLogin">User</a>
                             <a href="#" id="managerLogin">Manager</a>
                         </div>
                     </div>
                 </li>
-                <li><a href="#" id="cartBtn">Cart</a></li>
+                <li><a href="#" id="cartBtn"><ion-icon name="cart-outline"></ion-icon> Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -55,7 +78,7 @@
         <p>&copy; 2024 Online Automobile Store. All rights reserved.</p>
     </footer>
     
-    <div id="userLoginModal" class="modal">
+     <div id="userLoginModal" class="modal">
         <div class="modal-content">
             <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
             <div class="form-box login">
@@ -84,48 +107,50 @@
         </div>
     </div>
 
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
-            <div class="form-box register">
-                <h2>Registration</h2>
-                <form id="registerForm" action="#">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
-                        <label>Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="call"></ion-icon></span>
-                        <input type="text" required>
-                        <label>Phone Number</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="location"></ion-icon></span>
-                        <input type="text" required>
-                        <label>Location</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">I agree to terms and conditions</label>
-                    </div>  
-                    <button type="submit" class="button">Register</button>
-                    <div class="register">
-                        <p>Already have an account?<a href="#" class="login-link">Login</a></p>
-                    </div>
-                </form>
+    
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+                <div class="form-box register">
+                    <h2>Registration</h2>
+                    <form id="registerForm" action="#">
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" required>
+                            <label>Username</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="call"></ion-icon></span>
+                            <input type="text" required>
+                            <label>Phone Number</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="location"></ion-icon></span>
+                            <input type="text" required>
+                            <label>Location</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">I agree to terms and conditions</label>
+                        </div>  
+                        <button type="submit" class="button">Register</button>
+                        <div class="register">
+                            <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    
 
     <div id="managerLoginModal" class="modal">
         <div class="modal-content">
